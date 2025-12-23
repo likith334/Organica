@@ -102,13 +102,20 @@ export const ListProduct = () => {
             </li>
           </ul>
           <ul className="grid-list">
-            {data.map((item) => 
-
-               <ProductCard key={item.productid} id={item.productid} name={item.productName} description={item.description} price={item.price} img={item.img} />
+            {Array.isArray(data) && data.map((item) => (
+  <ProductCard
+    key={item.productId}
+    id={item.productId}
+    name={item.productName}
+    description={item.description}
+    price={item.price}
+    img={item.img}
+  />
+))}
             
             
         
-            )}
+            
           </ul>
         </div>
       </section>
